@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CV - Cristian Hurtado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base (los mismos que tenías) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Fira Code', monospace;
+            background: #000000;
+            color: #00ff00;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        .terminal-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 255, 0, 0.05) 0px,
+                rgba(0, 255, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+            animation: scroll 1s linear infinite;
+        }
+        @keyframes scroll {
+            0% { background-position-y: 0; }
+            100% { background-position-y: 4px; }
+        }
+        main {
+            position: relative;
+            z-index: 1;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #00ff00;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 6px 10px;
+            margin: 5px;
+            background-color: #002200;
+            border: 1px solid #00ff00;
+            border-radius: 4px;
+        }
+        a {
+            color: #00ffcc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para el contenedor de los certificados */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        /* Estilos para las imágenes de los certificados */
+        .project-img {
+            width: 300px;
+            height: auto;
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Añadimos el cursor para indicar que es clickable */
+        }
+        
+        /* Opcional: estilo al pasar el cursor */
+        .project-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        /* Estilos del Modal (ventana emergente para el zoom) */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Posición fija, cubre toda la pantalla */
+            z-index: 10; /* Se muestra por encima del resto del contenido */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Permite scroll si la imagen es muy grande */
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente oscuro */
+            padding-top: 60px;
+        }
+
+        /* Contenido del modal (la imagen en grande) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh; /* Ajusta la altura máxima a la ventana del navegador */
+        }
+
+        /* Botón de cerrar (la X) */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #00ff00;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        /* Animación de entrada de la imagen */
+        .modal-content {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)} 
+            to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-bg"></div>
+    <main>
+        <section>
+            <h1>>_ Cristian Hurtado</h1>
+            <h2>Estudiante de Ingeniería en Ciberseguridad</h2>
+            <p>Apasionado por la seguridad ofensiva y defensiva, las redes y los entornos Linux. Siempre en búsqueda de nuevos retos y aprendizajes en el mundo de la ciberseguridad.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Certificados</h2>
+            <div class="projects-grid">
+                <img src="../images/certificado Introducción a linux.png" alt="Certificado Introducción a Linux" class="project-img" onclick="openModal(this)">
+                
+                <img src="../images/Certificado de Personalizacio nde entorno Linux.png" alt="Certificado Personalización de Entorno Linux" class="project-img" onclick="openModal(this)">
+
+                <img src="../images/Certificado Preparacion EJPT.png" alt="Certificado Preparacion EJPT" class="project-img" onclick="openModal(this)">
+
+                </div>
+        </section>
+
+        </main>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Obtener el modal
+        var modal = document.getElementById("myModal");
+
+        // Obtener la imagen y la imagen del modal
+        var modalImg = document.getElementById("img01");
+
+        // Función para abrir el modal
+        function openModal(element) {
+            modal.style.display = "block";
+            modalImg.src = element.src;
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Cristian Hurtado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    /* Estilo base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
+      background: #000000;
+      color: #00ff00;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    body::-webkit-scrollbar {
+      display: none; /* Chrome, Edge, Safari */
+    }
+
+    /* Fondo estilo terminal animado */
+    .terminal-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 255, 0, 0.05) 0px,
+        rgba(0, 255, 0, 0.05) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      animation: scroll 1s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% { background-position-y: 0; }
+      100% { background-position-y: 4px; }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      color: #00ff00;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      margin: 5px;
+      background-color: #002200;
+      border: 1px solid #00ff00;
+      border-radius: 4px;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal-bg"></div>
+  <main>
+    <section>
+      <h1>>_ Cristian Hurtado</h1>
+      <h2>Estudiante de Ingeniería en Ciberseguridad</h2>
+      <p>Apasionado por la seguridad ofensiva y defensiva, las redes y los entornos Linux. Siempre en búsqueda de nuevos retos y aprendizajes en el mundo de la ciberseguridad.</p>
+    </section>
+
+    <section>
+      <h2>Resumen Profesional</h2>
+      <p>
+        Ingeniero en ciberseguridad en formación con experiencia práctica en análisis de vulnerabilidades, simulación de ataques y monitoreo de sistemas. Enfocado en herramientas de <strong>análisis malware</strong>, <strong>pentesting</strong> y <strong>análisis de tráfico malicioso</strong> con habilidades sólidas en entornos Linux y scripting Bash.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experiencia</h2>
+      <ul>
+        <li><strong>Programación automotriz - Empresa E&M (2021-2023):</strong> Análisis de sistemas, programación y diagnóstico técnico usando software especializado.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Proyectos destacados</h2>
+      <ul>
+        <li><strong>SIEM HIDS:</strong> Implementación de un entorno de monitoreo de seguridad para servidores Linux y generación de alertas.</li>
+        <li><strong>Laboratorios:</strong> Escenarios de ataque y defensa en laboratorios personalizados usando docker.</li>
+        <li><strong>Script de entorno en linux:</strong> Automatización avanzada para personalización completa de entorno gráfico en Linux con zsh, powerlevel10k, polybar y más.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>conocimientos</h2>
+      <div>
+        <span class="tag">SOC level 1</span>
+        <span class="tag">Nmap</span>
+        <span class="tag">Bash</span>
+        <span class="tag">EJPT</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Burp Suite</span>
+        <span class="tag">Vmware</span>
+        </div>
+    </section>
+
+
+
+<section>
+  <h2>Certificados y Badges</h2>
+  <div>
+    <a href="https://www.credly.com/users/cristian-hurtado.f8eddebd" target="_blank" class="tag">
+      Badges Cisco
+    </a>
+    
+    <a href="https://app.letsdefend.io/user/sinh" target="_blank" class="tag">
+      Badges LetsDefend
+    </a>
+    
+    <a href="./Certificates/certificates.html" target="_blank" class="tag">
+      Certificados
+    </a>
+    
+  </div>
+</section>
+
+
+    <section>
+      <h2>Educación</h2>
+      <p><strong>Ingeniería en Ciberseguridad</strong><br />
+      Instituto profesional AIEP, Chile — En curso</p>
+    </section>
+
+    <section>
+      <h2>Idiomas</h2>
+      <ul>
+        <li>Español (nativo)</li>
+        <li>Inglés (intermedio, en mejora constante)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/cristian-hsilva" target="_blank">/cristian-hsilva</a></p>
+    </section>
+  </main>
+</body>
+</html>
+
