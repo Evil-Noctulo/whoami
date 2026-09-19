@@ -19,7 +19,6 @@ h1, h2, h3, p {
     
 }
 
-
 /* Estilos para el header */
 header {
     background-color: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
@@ -83,182 +82,10 @@ nav ul li a {
     border-radius: 10px; /* Agrega bordes redondeados para el contenedor */
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #00f0dc;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    margin: 10px; /* Espacio alrededor del botón */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Añade transición suave para el zoom y el cambio de color */
-}
-
-.cta-button:hover {
-    background-color: #0096c7;
-    transform: scale(1.05); /* Aplica el efecto de zoom */
-}
-
-#sobre-mi {
-    padding: 100px; /* Aumenta el padding superior e inferior */
-    height: 600px; /* Ajusta la altura total de la sección */
-    background-image: url('sobre-mi/yoov2.png'); /* Agrega la imagen de fondo */
-    background-size: cover; /* La imagen cubrirá toda la sección */
-    background-position: center 25%; /* Bajamos un poco la imagen, a mayor porcentaje, más abajo estará */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    position: relative; /* Permite usar un overlay */
-    color: #f9f9f9; /* Color del texto claro */
-    text-align: left;
-}
-
-
-#sobre-mi::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.272); /* Degradado oscuro sobre la imagen */
-    z-index: 1; /* Capa por encima de la imagen */
-}
-
-#sobre-mi h2, #sobre-mi p, #sobre-mi .cta-button {
-    position: relative;
-    z-index: 2; /* Asegura que el texto esté por encima del overlay */
-}
-
-#sobre-mi h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#sobre-mi p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-#sobre-mi .cta-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #0096c7; /* Color amarillo para el botón */
-    color: #333; /* Color del texto del botón */
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
 #sobre-mi .cta-button i {
     margin-right: 8px;
     font-size: 1.5em;
 }
-
-#sobre-mi .cta-button:hover {
-    background-color: #0096c7; /* Amarillo más oscuro al pasar el cursor */
-    transform: scale(1.05);
-}
-
-
-/* Estilos generales de la sección */
-#servicios {
-    position: relative;
-    padding: 50px 20px; /* Padding ajustado para la sección */
-    background: linear-gradient(135deg, #4a4a4a, #222); /* Fondo degradado para la sección */
-    color: #fff; /* Color del texto blanco para contraste */
-}
-
-/* Overlay para mejorar la legibilidad del texto */
-#servicios::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Overlay más oscuro */
-    z-index: 1;
-}
-
-/* Estilos del título */
-#servicios h2 {
-    position: relative;
-    z-index: 2;
-    font-size: 2.5em; /* Aumenta el tamaño del título */
-    margin-bottom: 30px; /* Espacio inferior aumentado */
-    text-align: center; /* Centra el texto horizontalmente */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra para mejorar la legibilidad */
-}
-
-/* Contenedor de servicios */
-#servicios .services-list {
-    position: relative;
-    z-index: 2;
-    display: grid; /* Usar grid para un mejor diseño */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas con ancho mínimo */
-    gap: 30px; /* Espacio entre las cartas */
-    justify-items: center; /* Centra las cartas */
-    padding: 20px; /* Espacio interno para el contenedor */
-    max-width: 1200px;       /* Limita el ancho del grid */
-    margin: 0 auto;          /* Centra el grid dentro del contenedor */
-}
-
-/* Estilos de las cartas de servicio */
-#servicios .service-item {
-    background-color: rgba(62, 62, 59, 0.9); /* Fondo oscuro semitransparente */
-    color: #fff; /* Color del texto blanco para contraste */
-    padding: 20px; /* Espacio interno de las cartas */
-    border-radius: 15px; /* Bordes redondeados más pronunciados */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-    text-align: center; /* Alinea el texto al centro */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease; /* Transiciones suaves */
-    width: 100%; /* Asegura que las cartas ocupen todo el ancho */
-    max-width: 350px; /* Ajusta el tamaño máximo de las cartas */
-    opacity: 0; /* Inicialmente invisibles */
-    transform: translateY(20px); /* Desplazadas hacia abajo */
-}
-
-/* Efecto de zoom al pasar el cursor */
-#servicios .service-item:hover {
-    transform: translateY(-10px) scale(1.05); /* Efecto de desplazamiento y aumento al pasar el cursor */
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.4); /* Aumenta la sombra al pasar el cursor */
-    background-color: rgba(80, 80, 80, 0.9); /* Cambia el color de fondo al pasar el cursor */
-    filter: brightness(1.1); /* Aumenta el brillo al pasar el cursor */
-}
-
-/* Estilos para el título de cada carta */
-#servicios .service-item h3 {
-    margin-top: 10px; /* Espacio superior para el título */
-    margin-bottom: 10px; /* Espacio inferior para el título */
-    font-size: 1.5em; /* Tamaño de fuente para el título */
-}
-
-/* Estilos para la descripción en cada carta */
-#servicios .service-item p {
-    font-size: 1em; /* Tamaño de fuente para la descripción */
-    line-height: 1.6; /* Espacio entre líneas para mejorar la legibilidad */
-}
-
-/* Animación de entrada para las cartas */
-#servicios .service-item.visible {
-    opacity: 1; /* Se vuelve visible */
-    transform: translateY(0); /* Vuelve a la posición original */
-}
-
-/* Estilos para íconos */
-#servicios .service-icon {
-    max-width: 80px; /* Tamaño fijo para los íconos de servicio */
-    margin-bottom: 15px; /* Espacio entre el ícono y el texto */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Efecto de sombra en los íconos */
-}
-
-
-
 
 #seccion-galeria {
     position: relative;
@@ -295,27 +122,6 @@ nav ul li a {
 .image-gallery a:hover img {
     transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el cursor */
 }
-
-
-.visible-images {
-    display: flex;
-    animation: slide 60s linear infinite; /* Podemos ajustar la duración para controlar la velocidad */
-}
-
-@keyframes slide {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-25%); /* Desplaza a la izquierda la mitad del ancho total */
-    }
-}
-
-.visible-images img {
-    width: 2%; /* Ajusta el tamaño de las imágenes */
-    flex-shrink: 0; /* Evita que las imágenes se reduzcan */
-}
-
 
 .videos {
     background-color: #1b1b1b;
@@ -406,32 +212,6 @@ section h2 {
     margin-bottom: 20px;
 }
 
-.profile-img {
-    max-width: 200px;
-    border-radius: 50%;
-    margin-top: 20px;
-    filter: sepia(20%) blur(2px);
-}
-
-.services-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre los elementos de servicio */
-    justify-content: center; /* Centra los elementos de servicio horizontalmente */
-}
-
-.service-item {
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    width: 30%;
-}
-
-.service-icon {
-    max-width: 80px; /* Tamaño fijo para los íconos de servicio */
-}
-
 /* Popup styles */
 .popup {
     display: none;
@@ -459,7 +239,6 @@ section h2 {
 .popup-content p {
     white-space: pre-line;
 }
-
 
 .close-button {
     color: #222;
@@ -532,180 +311,6 @@ section h2 {
     transform: scale(1.05);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* Estilo para la sección de referencias de alumnos */
-#referencias-alumnos {
-    text-align: center;
-    padding: 40px;
-    background-color: #1e1e1e; /* Fondo oscuro similar */
-    color: white; /* Color del texto en blanco */
-}
-
-#referencias-alumnos h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #f4f4f4; /* Color del título */
-}
-
-.opiniones-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px; /* Ajustar el espacio entre opiniones */
-}
-
-.opinión {
-    background-color: #2a2a2a; /* Color de fondo de las opiniones */
-    color: white; /* Cambia el color del texto a blanco */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 30px; /* Espaciado interno */
-    width: 300px; /* Ancho de las opiniones */
-    text-align: center; /* Centrar texto */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
-}
-
-.opinión:hover {
-    transform: translateY(-10px); /* Efecto de desplazamiento al pasar el ratón */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Sombra más intensa al pasar el ratón */
-    color: lightgray; /* Cambia el color al pasar el ratón, si deseas */
-}
-
-.foto-alumno {
-    width: 90px; /* Ancho de la foto */
-    height: 80px; /* Alto de la foto */
-    border-radius: 50%; /* Hace la imagen circular */
-    margin: 0 auto 10px; /* Alineación centrada con margen inferior */
-    object-fit: cover; /* Asegura que la imagen llene el contenedor */
-    object-position: center; /* Centra la imagen dentro del contenedor */
-}
-
-.oculta {
-    display: none; /* Oculta las opiniones inicialmente */
-}
-
-#ver-mas,
-#ver-menos {
-    display: inline-block; /* Mostrar como bloque en línea */
-    padding: 10px 20px;
-    background-color: #0096c7; /* Color de fondo amarillo */
-    color: #1e1e1e; /* Color del texto oscuro */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Esquinas redondeadas */
-    font-size: 1.1rem; /* Tamaño de la fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
-    margin-top: 20px; /* Margen superior */
-}
-
-#ver-mas:hover,
-#ver-menos:hover {
-    background-color: #0096c7; /* Color de fondo más oscuro al pasar el mouse */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilo para la parte de la comunidad */
-
-#comunidad {
-    text-align: center;
-    padding: 40px;
-    background-color: #1e1e1e;
-    color: white;
-  }
-  
-  #comunidad h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #f4f4f4;
-  }
-  
-  .comunidad-cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    background-color: #2a2a2a;
-    border-radius: 15px;
-    padding: 30px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  }
-  
-  .card-icon {
-    width: 80px;
-    margin: 0 auto 20px auto; /* Alineación centrada con margen inferior */
-    display: block;
-  }
-  
-  
-  .card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #f0db4f; /* Color del texto de los títulos */
-  }
-  
-  .card p {
-    font-size: 1rem;
-    color: #ccc;
-    margin-bottom: 20px;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f0db4f; /* Botón amarillo */
-    color: #1e1e1e;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #e5c842;
-  }
-  
-
-
-
-
-
 /* Estilos para la parte de contactos */
 #social-media {
     padding: 50px;
@@ -735,8 +340,6 @@ section h2 {
 .social-icon:hover {
     color: #f7c600; /* Color amarillo al pasar el cursor */
 }
-
-
 
 /* Estilos para el footer */
 footer {
@@ -884,23 +487,8 @@ footer i {
     .principal-contenido .cta-button {
         font-size: 1.1rem; /* Tamaño del botón */
         padding: 12px 20px; /* Espaciado interno del botón */
-        background-color: #0096c7; /* Color del botón */
-        color: #333; /* Color del texto del botón */
-        border: none; /* Sin borde para un estilo minimalista */
-        border-radius: 5px; /* Bordes redondeados para el botón */
-        text-decoration: none; /* Eliminar subrayado en el enlace */
-        display: inline-block; /* Hacer que el botón sea en línea pero como bloque */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para el botón */
-        transition: background-color 0.3s ease; /* Transición suave al interactuar */
     }
-    
-    .principal-contenido .cta-button:hover {
-        background-color: #e8c547; /* Cambiar el color en hover para interacción */
-        color: #222; /* Color del texto en hover */
-    }
-    
-
-
 
     .skills-grid {
         display: flex;
@@ -923,7 +511,6 @@ footer i {
         width: 90%; /* Ajusta el ancho de los proyectos */
         margin: 10px 0; /* Espaciado entre proyectos */
     }
-
 
     #sobre-mi {
         padding: 20px;
@@ -950,50 +537,26 @@ footer i {
     #sobre-mi .cta-button {
         font-size: 1.2rem;
         padding: 12px 20px; /* Botón más grande y cómodo de tocar */
-        background-color: #f0db4f; /* Botón amarillo destacado */
-        color: #333; /* Texto oscuro en el botón */
-        border: none; /* Sin borde para un estilo minimalista */
-        border-radius: 5px; /* Bordes redondeados para el botón */
-        text-decoration: none; /* Eliminar subrayado en el enlace */
-        display: inline-block; /* Botón en línea pero bloque */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar */
-        transition: background-color 0.3s ease; /* Transición suave al interactuar */
         margin-top: 20px; /* Espacio entre el botón y el contenido anterior */
-    }
-    
-    #sobre-mi .cta-button:hover {
-        background-color: #47dde8; /* Cambiar el color en hover para interacción */
-        color: #222; /* Color del texto en hover */
-    }
-    
-    
-
-    #servicios {
-        display: none;
-    }
-
-    
-
-    .visible-images img {
-        width: 60px; /* Tamaño de las imágenes en móviles pequeños */
-        height: auto; /* Mantener la relación de aspecto */
     }
 
     #seccion-galeria {
         padding: 10px; /* Reducir espaciado interno en móviles pequeños */
     }
 
-
 }
 /* ====== SECCIÓN SOBRE MI ====== */
 #sobre-mi {
   padding: 80px 40px;
+  height: 600px;
   background-image: url('sobre-mi/yoov2.png');
   background-size: cover;
   background-position: center 25%;
   background-repeat: no-repeat;
   position: relative;
   color: #f9f9f9;
+  text-align: left;
   isolation: isolate;   /* aísla el overlay */
   overflow: hidden;     /* evita desbordes extraños */
   margin-bottom: 0px;  /* espacio respecto a la siguiente sección */
@@ -1071,12 +634,16 @@ footer i {
 }
 
 .cta-button {
+  display: inline-block;
   background: cyan;
   color: black;
   padding: 0.6rem 1.2rem;
+  border: none;
   border-radius: 8px;
   text-decoration: none;
+  font-size: 1.2em;
   font-weight: bold;
+  margin: 10px;
   transition: transform 0.2s ease, background 0.3s ease;
 }
 
@@ -1088,6 +655,7 @@ footer i {
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   #sobre-mi {
+    height: auto; /* Evita recortar el contenido cuando las tarjetas se apilan */
     padding: 40px 20px;
     margin-bottom: 40px;
   }
